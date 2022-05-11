@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+    --red: rgb(236, 3, 20);
+    --gray-border: rgb(64,64,64);
+    --gray: rgba(64,64,64, 0.9);
+    --shadow-color: black;
+    --light-gray: rgba(90,90,90,1);
+    --orange: rgb(180,73,25);
+    --gold: goldenrod;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    background-image: url(../img/bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    overflow: hidden;
+    border: 1px solid var(--red);
+}
+
+.container {
+    margin: 0;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 50px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.main {
+    background: var(--gray);
+    width: 80%;
+    height: 80%;
+    border: var(--gray-border) 1px solid;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    gap: 10px;
+}
+
+.main .stats:nth-child(1) {
+    border-right: 1px solid var(--red);
+}
+
+.main .stats:nth-child(2) {
+    border-left: 1px solid var(--red);
+}
+
+.main .stats .card {
+    background: var(--gold);
+    width: 70%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--orange);
+    font-size: 1.1rem;
+    transition: border-color 200ms;
+}
+
+.main .stats .card:hover {
+    border-color: var(--red);
+}
+
+.main .stats .card div {
+    width: 100%;
+}
+
+.main .stats .card div:nth-child(2) {
+    text-align: center;
+}
+
+/* closebtn */
+.closebtn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: var(--red) 1px solid;
+}
+
+.closebtn::before {
+    content: 'Zamknij okno';
+    position: absolute;
+    right: 60px;
+    width: 100px;
+    bottom: 50%;
+    transform: translateY(50%);
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    opacity: 0;
+    transition: all 200ms;
+}
+
+.closebtn:hover::before {
+    opacity: 1;
+    transition: all 200ms;
+}
+
+.closebtn i {
+    font-size: 3rem;
+    color: black;
+}
+
